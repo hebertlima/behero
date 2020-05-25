@@ -1,4 +1,5 @@
 const express = require('express');
+const { celebrate, Joi, Segments } = require('celebrate');
 
 const SessionController = require('./controllers/SessionController');
 const OngController = require('./controllers/OngController');
@@ -10,6 +11,7 @@ const routes = express.Router();
 routes.post('/sessions', SessionController.store);
 
 routes.get('/ongs', OngController.index);
+
 routes.post('/ongs', OngController.store);
 
 routes.get('/profiles', ProfileController.index);
